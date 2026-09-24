@@ -17,6 +17,10 @@ Generative image and animated banner engine for Node.js.
 - Node.js >= 22
 - TypeScript 7+
 
+## Showcase
+
+![phasema CLI demo](assets/screenshots/terminal-demo.gif)
+
 ## Install
 
 ```
