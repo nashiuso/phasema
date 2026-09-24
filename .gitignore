@@ -5,6 +5,4 @@ coverage/
 .env
 *.log
 .DS_Store
-
-# asciinema recordings
 *.cast
