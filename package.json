@@ -1,0 +1,90 @@
+{
+  "name": "phasema",
+  "version": "0.2.0",
+  "description": "Generative image and animated banner engine with variable typography and procedural backgrounds",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch src/cli.ts",
+    "start": "node dist/cli.js",
+    "cli": "tsx src/cli.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "rm -rf dist output",
+    "generate": "tsx src/cli.ts generate",
+    "generate:banner": "tsx src/cli.ts banner",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck:legacy": "tsc -p tsconfig.json"
+  },
+  "keywords": [
+    "generative-art",
+    "canvas",
+    "sharp",
+    "typescript"
+  ],
+  "author": "nashiuso (https://github.com/nashiuso)",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.2",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "typescript-eslint": "^8.65.0",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@fontsource/oswald": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@fontsource/poppins": "^5.3.0",
+    "@fontsource/roboto": "^5.3.0",
+    "@gomander/napi-gif-encoder": "^0.0.8",
+    "@napi-rs/canvas": "^1.0.9",
+    "@skyra/gifenc": "^1.0.1",
+    "ansimax": "^1.7.1",
+    "dotenv": "^18.0.3",
+    "piscina": "^5.3.2",
+    "sharp": "^0.35.4",
+    "tslog": "^5.2.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "phasema": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/nashiuso/phasema",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nashiuso/phasema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nashiuso/phasema/issues"
+  }
+}
