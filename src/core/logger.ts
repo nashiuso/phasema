@@ -1,7 +1,5 @@
 import { Logger } from "tslog";
-import { gradient, color } from "ansimax";
-
-const PURPLE_GRADIENT = ["#6a0dad", "#9b59b6", "#d7bde2", "#9b59b6", "#6a0dad"];
+import { color } from "ansimax";
 
 const logger = new Logger({ minLevel: "WARN", type: "json" });
 
@@ -19,8 +17,4 @@ export function logInfo(message: string): void {
 
 export function logStep(message: string): void {
   console.log(`${color.magenta("→")} ${message}`);
-}
-
-export function logBanner(text: string): void {
-  console.log(gradient(text, PURPLE_GRADIENT));
 }

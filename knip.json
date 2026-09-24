@@ -1,0 +1,6 @@
+{
+  "entry": ["src/index.ts", "src/banner/worker.ts"],
+  "project": ["src/**/*.ts"],
+  "ignoreExportsUsedInFile": true,
+  "ignore": ["src/stock/index.ts"]
+}
