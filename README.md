@@ -1,4 +1,20 @@
-# phasema
+<p align="center">
+  <img src="assets/banner.gif" alt="phasema" width="720">
+</p>
+
+<h1 align="center">phasema</h1>
+
+<p align="center">
+  Generative image and animated banner engine for Node.js.
+</p>
+
+<p align="center">
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D22-brightgreen" alt="Node.js"></a>
+  <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/typescript-6.0-blue" alt="TypeScript"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD--3--Clause-purple" alt="License"></a>
+</p>
+
+---
 
 Generative image and animated banner engine for Node.js.
 
