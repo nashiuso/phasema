@@ -1,108 +1,89 @@
 <p align="center">
-  <img src="assets/banner.gif" alt="phasema" width="720">
+  <img alt="phasema" src="./assets/banner.gif" width="100%">
+  <h1 align="center">phasema</h1>
 </p>
 
-<h1 align="center">phasema</h1>
-
-<p align="center">
-  Generative image and animated banner engine for Node.js.
-</p>
-
-<p align="center">
-  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E%3D22-brightgreen" alt="Node.js"></a>
-  <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/typescript-6.0-blue" alt="TypeScript"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-BSD--3--Clause-purple" alt="License"></a>
-</p>
-
----
+![Node.js](https://img.shields.io/badge/node-%3E%3D22-brightgreen)
+![TypeScript](https://img.shields.io/badge/typescript-6.0-blue)
+![License](https://img.shields.io/badge/license-BSD--3--Clause-purple)
 
 Generative image and animated banner engine for Node.js.
 
-## Features
+## Examples
 
-- Procedural pixel layers with deterministic randomness
-- Animated GIF banners with per-letter variable typography
-- Parallel frame rendering via worker threads (piscina)
-- High-performance native GIF encoding
-- Structured logging with colored CLI output
-- Optional Pexels integration with procedural fallback
-- Reproducible output through seed-based randomness
+````bash
+# Generate 10 static PNG compositions
+npx tsx src/cli.ts generate
 
-## Requirements
+# Generate an animated banner GIF at 60 fps
+npx tsx src/cli.ts banner --fps 60 --duration 3
 
-- Node.js >= 22
-- TypeScript 7+
+# Custom banner at 120 fps with 8 workers
+npx tsx src/cli.ts banner --fps 120 --duration 3 --workers 8 --sample 15
 
-## Showcase
+# Show all commands and flags
+npx tsx src/cli.ts helpEOF
+echo "2 OK"
+cat > README.md << 'EOF'
+<p align="center">
+  <img alt="phasema" src="./assets/banner.gif" width="100%">
+  <h1 align="center">phasema</h1>
+</p>
 
-![phasema CLI demo](assets/screenshots/terminal-demo.gif)
+![Node.js](https://img.shields.io/badge/node-%3E%3D22-brightgreen)
+![TypeScript](https://img.shields.io/badge/typescript-6.0-blue)
+![License](https://img.shields.io/badge/license-BSD--3--Clause-purple)
 
-## Install
+Generative image and animated banner engine for Node.js.
 
-```
-npm install
-```
+## Examples
 
-## Usage
+```bash
+# Generate 10 static PNG compositions
+npx tsx src/cli.ts generate
 
-Generate 10 static compositions:
+# Generate an animated banner GIF at 60 fps
+npx tsx src/cli.ts banner --fps 60 --duration 3
 
-```
-npm run generate
-```
+# Custom banner at 120 fps with 8 workers
+npx tsx src/cli.ts banner --fps 120 --duration 3 --workers 8 --sample 15
 
-Generate an animated banner GIF at 60 fps:
-
-```
-npm run generate:banner
-```
-
-Custom banner at 120 fps with 8 workers:
-
-```
-npx tsx src/cli.ts banner --fps 120 --duration 3 --workers 8
-```
-
-Show help:
-
-```
+# Show all commands and flags
 npx tsx src/cli.ts help
-```
 
-## CLI Flags
+## Related
 
-| Flag               | Default | Description                    |
-| ------------------ | ------- | ------------------------------ |
-| --fps <n>          | 60      | Frames per second (banner)     |
-| --duration <n>     | 5       | Duration in seconds (banner)   |
-| --workers <n>      | 4       | Worker threads (banner)        |
-| --count <n>        | 10      | Number of results (generate)   |
-| --size <n>         | 512     | Canvas size (generate)         |
-| --no-background    | false   | Disable background composition |
-| --background-count | 6       | Number of background images    |
+- [@napi-rs/canvas](https://github.com/Brooooooklyn/canvas) - Native canvas for Node.js
+- [sharp](https://github.com/lovell/sharp) - High-performance image processing
+- [piscina](https://github.com/piscinajs/piscina) - Worker thread pool
+- [@gomander/napi-gif-encoder](https://github.com/gomander/napi-gif-encoder) - Native GIF encoder
 
-## Library usage
+## Caught a Bug?
 
-```ts
-import { generatePixelLayer, compose, generateFramesParallel, registerAllFonts } from "phasema";
-```
-
-## Architecture
-
-```
-src/
-  banner/        animated banner pipeline
-    worker.ts             per-frame worker
-    parallel-composer.ts  piscina orchestration
-    gif-encoder.ts        native GIF encoding
-  composition/   layer composition
-  core/          shared types, defaults, logger, CLI theme
-  pixels/        procedural pixel layer generator
-  stock/         stock and procedural image sources
-  utils/         deterministic random utilities
-  cli.ts         command-line interface
-```
+1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
+2. Install the dependencies: `npm install`
+3. Run the test suite: `npm test`
+4. Open a pull request with a clear description of the change
 
 ## License
 
-ISC
+BSD-3-Clause. See [LICENSE](./LICENSE) for details.
+
+## Related
+
+- [@napi-rs/canvas](https://github.com/Brooooooklyn/canvas) - Native canvas for Node.js
+- [sharp](https://github.com/lovell/sharp) - High-performance image processing
+- [piscina](https://github.com/piscinajs/piscina) - Worker thread pool
+- [@gomander/napi-gif-encoder](https://github.com/gomander/napi-gif-encoder) - Native GIF encoder
+
+## Caught a Bug?
+
+1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
+2. Install the dependencies: `npm install`
+3. Run the test suite: `npm test`
+4. Open a pull request with a clear description of the change
+
+## License
+
+BSD-3-Clause. See [LICENSE](./LICENSE) for details.
+````
